@@ -35,7 +35,7 @@
       activeFlowStep = (activeFlowStep + 1) % flowSteps.length;
       flowSteps[activeFlowStep].classList.add("active");
       flowSteps[activeFlowStep].setAttribute("aria-current", "step");
-      flowSteps[activeFlowStep].lastElementChild.textContent = "processando";
+      flowSteps[activeFlowStep].lastElementChild.textContent = "coletando";
     }, 4500);
 
     flowSteps.forEach((step) => {
