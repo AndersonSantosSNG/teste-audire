@@ -73,8 +73,28 @@
       <div class="container nav-wrap">
         <a href="./index.html" class="brand"
           ><img src="./images/logo-audire.png" alt="Audire" /></a
-        ><button class="menu-button" aria-label="Abrir menu">☰</button>
-        <nav class="main-nav">
+        ><button
+          class="menu-button"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M4 5h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 19h16"></path>
+          </svg>
+        </button>
+        <nav class="main-nav" id="menu-principal">
           <a href="./por-que-audire.html">Por que Audire?</a
           ><a href="./suite.html">A Suite</a
           ><a href="./monitor.html">O Monitor</a
@@ -223,6 +243,13 @@
               analisado.
             </p>
           </details>
+          <p class="faq-related-link">
+            Para conhecer conciliação, elegibilidade de créditos e gestão
+            multi-CNPJ, veja a
+            <a href="./reforma-tributaria.html"
+              >solução Audire Reforma Tributária</a
+            >.
+          </p>
           <details>
             <summary>
               A simulação determina automaticamente o melhor regime?
@@ -252,7 +279,7 @@
               real para a sua empresa.
             </p>
           </div>
-          <a class="button" href="./contato.html">Quero meu diagnóstico →</a>
+          <a class="button" href="./contato.html">Solicitar diagnóstico →</a>
         </div>
       </section>
     </main>

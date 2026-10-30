@@ -12,6 +12,7 @@
       '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 6-12 12"></path><path d="m6 6 12 12"></path></svg>';
     const setMenu = (open) => {
       mainNav.classList.toggle("open", open);
+      menuButton.setAttribute("aria-expanded", String(open));
       menuButton.setAttribute(
         "aria-label",
         open ? "Fechar menu" : "Abrir menu",
@@ -141,17 +142,35 @@
   }
   approvedForm?.addEventListener("submit", (event) => {
     event.preventDefault();
+    if (approvedForm.dataset.submitting === "true") return;
+    const submitButton = approvedForm.querySelector('[type="submit"]');
+    approvedForm.dataset.submitting = "true";
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.setAttribute("aria-busy", "true");
+    }
     const data = new FormData(approvedForm);
     const value = (name, fallback = "Não informado") =>
       String(data.get(name) || fallback).trim();
     const message = `Olá, equipe SNG Audire!\n\nTenho interesse em: *${value("interesse", "Suite completa")}*.\nCNPJs: ${value("cnpjs")}\nFornecedores: ${value("fornecedores")}\n\n*Contato*\nNome: ${value("nome")}\nEmpresa: ${value("empresa")}\nCargo: ${value("cargo")}\nE-mail: ${value("email")}\n\n*Desafio*\n${value("desafio")}`;
-    window.open(
+    const whatsappWindow = window.open(
       `https://wa.me/5511984133148?text=${encodeURIComponent(message)}`,
       "_blank",
       "noopener,noreferrer",
     );
     const status = document.querySelector("#form-msg");
-    if (status) status.textContent = "Mensagem preparada no WhatsApp.";
+    if (status) {
+      status.textContent = whatsappWindow
+        ? "Mensagem preparada. Confirme o envio no WhatsApp."
+        : "Não foi possível abrir o WhatsApp. Verifique o bloqueador de pop-ups e tente novamente.";
+    }
+    window.setTimeout(() => {
+      approvedForm.dataset.submitting = "false";
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
+      }
+    }, 2500);
   });
 
   document.querySelectorAll("[data-count]").forEach((counter) => {

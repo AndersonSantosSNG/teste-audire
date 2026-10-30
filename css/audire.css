@@ -417,6 +417,31 @@ textarea {
   width: 100%;
   max-width: none;
 }
+.example-note,
+.faq-related-link {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.example-note {
+  max-width: 760px;
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 3px solid var(--orange);
+}
+.faq-related-link {
+  margin-top: 24px;
+}
+.faq-related-link a {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.contact-form .button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
 .contact-page .contact-image-panel {
   min-height: calc(100dvh - 76px);
 }
