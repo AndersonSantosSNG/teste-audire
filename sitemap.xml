@@ -1,11 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.sistemasaudire.com.br/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.sistemasaudire.com.br/por-que-audire</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.sistemasaudire.com.br/suite</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.sistemasaudire.com.br/monitor</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.sistemasaudire.com.br/fornecedores</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.sistemasaudire.com.br/reforma-tributaria</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.sistemasaudire.com.br/simples</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.sistemasaudire.com.br/contato</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <url>
+    <loc>https://www.sistemasaudire.com.br/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <image:image>
+      <image:loc>https://www.sistemasaudire.com.br/images/audire-hero-conceito.jpg</image:loc>
+      <image:title>Suite Audire e observabilidade de riscos corporativos</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.sistemasaudire.com.br/por-que-audire</loc>
+    <lastmod>2026-10-30</lastmod>
+    <image:image>
+      <image:loc>https://www.sistemasaudire.com.br/images/audire-observabilidade-conceito.jpg</image:loc>
+      <image:title>Rastreabilidade e observabilidade de riscos</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.sistemasaudire.com.br/suite</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sistemasaudire.com.br/monitor</loc>
+    <lastmod>2026-10-30</lastmod>
+    <image:image>
+      <image:loc>https://www.sistemasaudire.com.br/images/sistema-dashboard-monitor.png</image:loc>
+      <image:title>Dashboard do Audire Monitor</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.sistemasaudire.com.br/fornecedores</loc>
+    <lastmod>2026-10-30</lastmod>
+    <image:image>
+      <image:loc>https://www.sistemasaudire.com.br/images/sistema-dashboard-fornecedores.png</image:loc>
+      <image:title>Dashboard de risco de fornecedores</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.sistemasaudire.com.br/reforma-tributaria</loc>
+    <lastmod>2026-10-30</lastmod>
+    <image:image>
+      <image:loc>https://www.sistemasaudire.com.br/images/audire-rtc-conceito.jpg</image:loc>
+      <image:title>Auditoria da Reforma Tributária do Consumo</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.sistemasaudire.com.br/simples</loc>
+    <lastmod>2026-10-30</lastmod>
+    <image:image>
+      <image:loc>https://www.sistemasaudire.com.br/images/audire-simples-conceito.jpg</image:loc>
+      <image:title>Comparação entre Simples Puro e Híbrido</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.sistemasaudire.com.br/contato</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
 </urlset>

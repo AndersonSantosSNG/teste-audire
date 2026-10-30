@@ -1,43 +1,4 @@
 (() => {
-  const canonicalUrl = new URL(window.location.pathname, "https://www.sistemasaudire.com.br");
-  const ensureMeta = (selector, attributes) => {
-    let element = document.head.querySelector(selector);
-    if (!element) {
-      element = document.createElement(attributes.tag || "meta");
-      document.head.appendChild(element);
-    }
-    Object.entries(attributes).forEach(([name, value]) => {
-      if (name !== "tag") element.setAttribute(name, value);
-    });
-  };
-  ensureMeta('link[rel="canonical"]', { tag: "link", rel: "canonical", href: canonicalUrl.href });
-  ensureMeta('meta[property="og:title"]', { property: "og:title", content: document.title });
-  ensureMeta('meta[property="og:description"]', {
-    property: "og:description",
-    content: document.querySelector('meta[name="description"]')?.content || "Suite Audire",
-  });
-  ensureMeta('meta[property="og:url"]', { property: "og:url", content: canonicalUrl.href });
-  ensureMeta('meta[property="og:type"]', { property: "og:type", content: "website" });
-  ensureMeta('meta[property="og:image"]', {
-    property: "og:image",
-    content: "https://www.sistemasaudire.com.br/images/audire-suite.jpeg",
-  });
-  if (!document.head.querySelector('script[data-audire-schema]')) {
-    const schema = document.createElement("script");
-    schema.type = "application/ld+json";
-    schema.dataset.audireSchema = "true";
-    schema.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Audire",
-      url: "https://www.sistemasaudire.com.br/",
-      logo: "https://www.sistemasaudire.com.br/images/logo-audire.png",
-      parentOrganization: { "@type": "Organization", name: "SNG Synergroup" },
-      contactPoint: { "@type": "ContactPoint", contactType: "sales", email: "contato@sng.com.br" },
-    });
-    document.head.appendChild(schema);
-  }
-
   const reducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;
@@ -51,7 +12,10 @@
       '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 6-12 12"></path><path d="m6 6 12 12"></path></svg>';
     const setMenu = (open) => {
       mainNav.classList.toggle("open", open);
-      menuButton.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+      menuButton.setAttribute(
+        "aria-label",
+        open ? "Fechar menu" : "Abrir menu",
+      );
       menuButton.innerHTML = open ? closeIcon : menuIcon;
     };
 
@@ -88,7 +52,9 @@
     });
   }
 
-  const tabs = [...document.querySelectorAll(".product-screen-tabs [role=tab]")];
+  const tabs = [
+    ...document.querySelectorAll(".product-screen-tabs [role=tab]"),
+  ];
   const screenImages = [
     ...document.querySelectorAll(".product-screen-stage img"),
   ];
@@ -161,8 +127,16 @@
 
   const approvedForm = document.querySelector("#audire-form");
   const interestSelect = approvedForm?.querySelector('[name="interesse"]');
-  if (interestSelect && ![...interestSelect.options].some((option) => option.value === "Simples Puro x Híbrido")) {
-    const option = new Option("Simples Puro x Híbrido", "Simples Puro x Híbrido");
+  if (
+    interestSelect &&
+    ![...interestSelect.options].some(
+      (option) => option.value === "Simples Puro x Híbrido",
+    )
+  ) {
+    const option = new Option(
+      "Simples Puro x Híbrido",
+      "Simples Puro x Híbrido",
+    );
     interestSelect.insertBefore(option, interestSelect.lastElementChild);
   }
   approvedForm?.addEventListener("submit", (event) => {
@@ -181,7 +155,9 @@
   });
 
   document.querySelectorAll("[data-count]").forEach((counter) => {
-    counter.textContent = Number(counter.dataset.count || 0).toLocaleString("pt-BR");
+    counter.textContent = Number(counter.dataset.count || 0).toLocaleString(
+      "pt-BR",
+    );
   });
 
   if (!reducedMotion && "IntersectionObserver" in window) {
